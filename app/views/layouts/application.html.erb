@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <ul>
+        <li><%= link_to 'Main', root_path %></li>
+        <li><%= link_to 'Movies', movies_path %></li>
+      </ul>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
