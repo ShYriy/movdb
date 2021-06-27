@@ -4,13 +4,19 @@
 
   <p>
     <%= movie.text %>
+    <br>
+    <%= link_to 'Show', movie_path(movie) %> |
+    <%= link_to 'Edit', edit_movie_path(movie) %> |
+    <%= link_to 'Destroy', movie_path(movie), data: {method: :delete, confirm: 'Are you sure?'} %>
   </p>
 
   <p>
-    <%= movie.rating %>
+    <%= movie.ratings %>
   </p>
 
   <p>
     <%= movie.category %>
   </p>
+
+
 <% end %>

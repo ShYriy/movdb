@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_06_25_112615) do
 
-  create_table 'movie', force: :cascade do |t|
-    t.string 'title'
-    t.text 'text'
-    t.integer 'rating'
-    t.integer 'category'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.integer "ratings"
+    t.integer "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
