@@ -1,13 +1,25 @@
+<%= render 'shared/errors', object: @movie %>
+
 <%= form_with model: @movie do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :title %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :text %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_area :text, class: 'form-control' %>
+    </div>
   </div>
 
-  <%= f.submit "Submit text" %>
+  <%= f.submit "Submit text", class: 'btn btn-primary' %>
 <% end %>

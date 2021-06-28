@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find_by id: params[:id]
   end
-  
+
   def index
     @movies = Movie.all
   end
@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find_by id: params[:id]
     if @movie.update movie_params
+      flash[:success] = "Movie updated!"
       redirect_to movies_path
     else
       render :edit
@@ -27,12 +28,14 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find_by id: params[:id]
     @movie.destroy
+    flash[:success] = "Movie deleted!"
     redirect_to movies_path
   end
 
   def create
     @movie = Movie.new movie_params
     if @movie.save
+      flash[:success] = "Movie created!"
       redirect_to movies_path
     else
       render :new
@@ -40,7 +43,7 @@ class MoviesController < ApplicationController
   end
 
   private
-  
+
   def movie_params
     params.require(:movie).permit(:title, :text)
   end
