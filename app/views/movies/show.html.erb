@@ -4,6 +4,14 @@
   <%= @movie.text %>
 </p>
 
+<p class="lead my-3">
+  <%= @movie.ratings %>
+</p>
+
+<p class="lead my-3">
+  <%= @movie.category %>
+</p>
+
 <%= link_to 'Show', movie_path(@movie), class: 'btn btn-primary' %> 
 <%= link_to 'Edit', edit_movie_path(@movie), class: 'btn btn-secondary' %>
 <%= link_to 'Delete', movie_path(@movie), class: 'btn btn-danger',
