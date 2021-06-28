@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all.page params[:page]
+    @movies = Movie.page params[:page]
   end
 
   def new
