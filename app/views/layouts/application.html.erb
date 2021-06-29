@@ -27,6 +27,9 @@
       <% flash.each do |k, v| %>
         <%= tag.div v, class: "alert alert-#{k}", role: 'alert' %>
       <% end %>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       
       <%= yield %>
     </main>
