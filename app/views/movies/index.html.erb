@@ -1,0 +1,37 @@
+<h1 class="mb-4">Movies</h1>
+
+<%= link_to 'New movie', new_movie_path, class: 'btn btn-primary btn-lg' %>
+
+<% @movies.each do |movie| %>
+  <article class="card mt-3">
+    <div class="card-body">
+      <h2><%= movie.title %></h2>
+
+      <section class="card-text">
+        <p class="my-2">
+          <%= movie.text %>
+        </p>
+      </section>
+
+      <section class="card-text">
+        <p class="my-2">
+          Rating: <%= movie.ratings %>
+        </p>
+      </section>
+
+      <section class="card-text">
+        <p class="my-2">
+          Category: <%= movie.category %>
+        </p>
+      </section>
+
+      <%= link_to 'Show', movie_path(movie), class: 'btn btn-primary' %>
+      <%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-secondary' %>
+      <%= link_to 'Delete', movie_path(movie), class: 'btn btn-danger',
+        data: {method: :delete, confirm: 'Are you sure?'} %>
+    </div>
+  </article>
+
+<% end %>
+<br>
+<%= paginate @movies %>

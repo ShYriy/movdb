@@ -1,0 +1,18 @@
+<h1 class="mb-4"><%= @movie.title %></h1>
+
+<p class="lead my-3">
+  <%= @movie.text %>
+</p>
+
+<p class="lead my-3">
+  Rating: <%= @movie.ratings %>
+</p>
+
+<p class="lead my-3">
+  Category: <%= @movie.category %>
+</p>
+
+<%= link_to 'Show', movie_path(@movie), class: 'btn btn-primary' %> 
+<%= link_to 'Edit', edit_movie_path(@movie), class: 'btn btn-secondary' %>
+<%= link_to 'Delete', movie_path(@movie), class: 'btn btn-danger',
+  data: {method: :delete, confirm: 'Are you sure?'} %>
