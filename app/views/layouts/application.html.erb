@@ -25,6 +25,9 @@
               <li><%= link_to 'Sign In', new_user_session_path, class: 'nav-link px-2 text-white' %></li>
             <% end %>
           </ul>
+          <% if current_user %>
+            User: <%= current_user.email %>
+          <% end %>
         </nav>
       </div>
     </header>
