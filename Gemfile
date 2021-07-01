@@ -56,7 +56,7 @@ group :test do
   gem 'webdrivers'
 end
 
-group :development do
+group :prodaction do
   gem 'pg'
 end
 
