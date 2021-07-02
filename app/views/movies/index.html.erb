@@ -2,6 +2,17 @@
 
 <%= link_to 'New movie', new_movie_path, class: 'btn btn-primary btn-lg' %>
 
+<br>
+<br>
+
+<div class="form-group col-md-4 col-sm-4">
+  <select class="form-select" aria-label="Default select example">
+    <%= @genres.each do |genre| %>
+      <option value="<%= genre.id %>"><%= genre.body %></option>
+    <% end %>
+  </select>
+</div>
+
 <% @movies.each do |movie| %>
   <article class="card mt-3">
     <div class="card-body">
@@ -21,7 +32,7 @@
 
       <section class="card-text">
         <p class="my-2">
-          Category: <%= movie.category %>
+          Category: <%= movie.genre.body %>
         </p>
       </section>
 

@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.page params[:page]
+    @genres = Genre.all
   end
 
   def new
@@ -45,6 +46,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :text, :ratings, :category)
+    params.require(:movie).permit(:title, :text, :ratings, :genre_id)
   end
 end

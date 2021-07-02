@@ -9,7 +9,7 @@
 </p>
 
 <p class="lead my-3">
-  Category: <%= @movie.category %>
+  Category: <%= @movie.genre.body %>
 </p>
 
 <%= link_to 'Show', movie_path(@movie), class: 'btn btn-primary' %> 
